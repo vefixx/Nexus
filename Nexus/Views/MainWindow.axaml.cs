@@ -7,7 +7,10 @@ namespace Nexus.Views
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            TitleBar.ExtendsContentIntoTitleBar = true;
+            TitleBar.TitleBarHitTestType = TitleBarHitTestType.Complex;
         }
     }
 }

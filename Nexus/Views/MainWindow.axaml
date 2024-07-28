@@ -20,4 +20,15 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+	<Grid RowDefinitions="Auto, *">
+		<Border Grid.Row="0" Height="32">
+			<TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+					   VerticalAlignment="Center"
+					   Margin="10 0"></TextBlock>
+		</Border>
+
+		<StackPanel Grid.Row="1">
+			
+		</StackPanel>
+	</Grid>
 </Window>
