@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Nexus.ViewModels"
+		mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="550"
+        x:Class="Nexus.SplashWindow"
+		x:DataType="vm:SplashWindowViewModel"
+		Width="1000"
+		Height="550"
+		WindowStartupLocation="CenterScreen"
+		CanResize="False"
+        Title="Nexus">
+	
+	<Grid RowDefinitions="Auto, *">
+		<Border Grid.Row="0" Height="32">
+			<TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+					   VerticalAlignment="Center"
+					   Margin="10 0"></TextBlock>
+		</Border>
+
+		<StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Image Source="/Assets/Images/nexus_image.png"
+				   Width="172"
+				   Height="172"
+				   Margin="0 0 0 50"></Image>
+			<ProgressBar Width="400" IsIndeterminate="True"></ProgressBar>
+			<TextBlock Text="{Binding StartUpMessage}"
+					   TextAlignment="Center"
+					   Margin="0 10 0 0"></TextBlock>
+		</StackPanel>
+	</Grid>
+</Window>

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Assets\nexus_icon.ico" />
+	  <AvaloniaResource Include="Assets/Images/nexus_image.png"></AvaloniaResource>
   </ItemGroup>
 
   <ItemGroup>
