@@ -17,28 +17,41 @@ namespace Nexus.ViewModels
         [ObservableProperty]
         private ViewModelBase _currentPage;
 
-        public ObservableCollection<NavigationItem> NavigationItems = new()
+        public ObservableCollection<NavigationItem> NavigationItems { get; } = new()
         {
-            new NavigationItem(typeof(HomePageViewModel), "home_regular")
+            new NavigationItem(typeof(HomePageViewModel), "Главная", "Home", "Об авторе, программе и условия пользования.")
         };
+
+        partial void OnSelectedNavigationItemChanged(NavigationItem value)
+        {
+            if (value is null) return;
+
+            var instance = Activator.CreateInstance(value.ViewModelType);
+
+            if (instance is null) return;
+
+            CurrentPage = (ViewModelBase)instance;
+        }
     }
 
     public class NavigationItem
     {
-        public NavigationItem(Type viewModelType, string iconKey)
+        public NavigationItem(Type viewModelType, string title, string iconKey, string toolTipString)
         {
             ViewModelType = viewModelType;
-            Title = viewModelType.Name.Replace("PageViewModel", "");
+            Title = title;
 
-            Application.Current!.TryFindResource(iconKey, out var res);
-            NavigationItemIcon = (StreamGeometry)res!;
+            NvItemIconSource = iconKey;
 
             Tag = viewModelType.Name.Replace("ViewModel", "");
+
+            ToolTipString = toolTipString;
         }
 
         public string Title { get; }
         public string Tag { get; }
-        public StreamGeometry NavigationItemIcon { get; }
+        public string NvItemIconSource { get; }
         public Type ViewModelType { get; }
+        public string ToolTipString {  get; }
     }
 }

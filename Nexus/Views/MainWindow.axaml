@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:ui="using:FluentAvalonia.UI.Controls"
+		xmlns:ic="using:FluentAvalonia.FluentIcons"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="550"
 		Width="1000"
 		Height="550"
@@ -27,8 +28,21 @@
 					   Margin="10 0"></TextBlock>
 		</Border>
 
-		<StackPanel Grid.Row="1">
-			
-		</StackPanel>
+		<Grid Grid.Row="1">
+			<ui:NavigationView PaneDisplayMode="Left"
+							   Content="{Binding CurrentPage}"
+							   MenuItemsSource="{Binding NavigationItems}"
+							   SelectedItem="{Binding SelectedNavigationItem}"
+							   IsSettingsVisible="False">
+				<ui:NavigationView.MenuItemTemplate>
+					<DataTemplate DataType="{x:Type vm:NavigationItem}">
+						<ui:NavigationViewItem Content="{Binding Title}" IconSource="{Binding NvItemIconSource}" ToolTip.Tip="{Binding ToolTipString}" />
+					</DataTemplate>
+				</ui:NavigationView.MenuItemTemplate>
+
+				<ui:NavigationView.FooterMenuItems>
+				</ui:NavigationView.FooterMenuItems>
+			</ui:NavigationView>
+		</Grid>
 	</Grid>
 </Window>

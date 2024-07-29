@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Remove="Assets\Icons\Icons.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <AvaloniaResource Include="Assets/Images/nexus_image.png"></AvaloniaResource>
   </ItemGroup>
 
@@ -25,5 +29,11 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="FluentAvaloniaUI" Version="2.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Update="Assets\Icons\Icons.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Nexus;
+namespace Nexus.Views;
 
 public partial class HomePageView : UserControl
 {

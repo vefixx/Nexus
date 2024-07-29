@@ -12,5 +12,6 @@
   
     <Application.Styles>
 		<sty:FluentAvaloniaTheme PreferUserAccentColor="True"></sty:FluentAvaloniaTheme>
-    </Application.Styles>
+		<StyleInclude Source="avares://Nexus/Assets/Icons/Icons.axaml"/>
+	</Application.Styles>
 </Application>

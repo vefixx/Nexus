@@ -14,9 +14,10 @@
 	
 	<Grid RowDefinitions="Auto, *">
 		<Border Grid.Row="0" Height="32">
-			<TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-					   VerticalAlignment="Center"
+			<StackPanel VerticalAlignment="Center" Orientation="Horizontal">				
+				<TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"				
 					   Margin="10 0"></TextBlock>
+			</StackPanel>
 		</Border>
 
 		<StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
