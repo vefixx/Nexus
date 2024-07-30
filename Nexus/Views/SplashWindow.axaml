@@ -9,6 +9,7 @@
 		Width="1000"
 		Height="550"
 		WindowStartupLocation="CenterScreen"
+		Icon="/Assets/nexus_icon.ico"
 		CanResize="False"
         Title="Nexus">
 	

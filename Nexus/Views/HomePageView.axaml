@@ -19,11 +19,11 @@
 
 			<TextBlock Grid.Row="0"
 					   Text="{Binding AboutApp}"
-					   Margin="30"
+					   Margin="30 30 30 0"
 					   TextWrapping="Wrap"></TextBlock>
 
 			<Border Grid.Row="1"
-					Margin="30"
+					Margin="30 10 30 30"
 					Padding="10"
 					BorderBrush="Gray"
 					BorderThickness="1"

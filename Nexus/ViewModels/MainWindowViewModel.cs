@@ -19,7 +19,8 @@ namespace Nexus.ViewModels
 
         public ObservableCollection<NavigationItem> NavigationItems { get; } = new()
         {
-            new NavigationItem(typeof(HomePageViewModel), "Главная", "Home", "Об авторе, программе и условиях пользования.")
+            new NavigationItem(typeof(HomePageViewModel), "Главная", "Home", "Об авторе, программе и условиях пользования."),
+            new NavigationItem(typeof(AccountPageViewModel), "Аккаунт", "Contact", "Авторизация через Discord и управление токенами.")
         };
 
         partial void OnSelectedNavigationItemChanged(NavigationItem value)
