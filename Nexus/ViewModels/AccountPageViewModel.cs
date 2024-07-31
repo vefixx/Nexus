@@ -2,8 +2,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FluentAvalonia.UI.Controls;
-using Nexus.ViewModels.Dialogs;
-using Nexus.Views.Dialogs;
+using Nexus.ViewModels.DialogsViewModels;
+using Nexus.Views.DialogsViews;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,53 +19,25 @@ namespace Nexus.ViewModels
         private bool _isLogin;
 
         [ObservableProperty]
-        private string _username = "vefixx";
-
-        [ObservableProperty]
-        private string _countCreatedPosts = "0";
-
-        [ObservableProperty]
-        public string _countMaxPosts = "3";
-
-        [ObservableProperty]
-        private string _countMaxPostsString;
-
-        [ObservableProperty]
-        private string _countSentPosts = "0";
-
-        public AccountPageViewModel()
-        {
-            _countMaxPostsString = $"из {_countMaxPosts}";
-        }
+        private string _username;
 
         [RelayCommand]
-        private void OpenLoginPage()
+        private async void ShowAccountInfoDialogAsync()
         {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = "https://vscripts.ru/login",
-                UseShellExecute = true
-            });
-        }
+            ViewModelBase dialogViewModel = new AccountInfoDialogViewModel();
 
-        [RelayCommand]
-        private async void ShowTokenWriteDialogAsync()
-        {
-            var dialog = new ContentDialog()
+            ContentDialog dialog = new ContentDialog()
             {
-                Title = "Добавление токена",
-                PrimaryButtonText = "Отправить",
-                CloseButtonText = "Отменить"
+                Title = "Аккаунт",
+                CloseButtonText = "Закрыть"
             };
 
-            var dialogViewModel = new TokenDialogViewModel();
-
-            dialog.Content = new TokenDialogView()
+            dialog.Content = new AccountInfoDialogView()
             {
                 DataContext = dialogViewModel
             };
 
-            var result = await dialog.ShowAsync();
+            await dialog.ShowAsync();
         }
     }
 }

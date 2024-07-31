@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Nexus.ViewModels;
+using Nexus.ViewModels.DialogsViewModels;
 using System;
 using System.ComponentModel;
 
@@ -39,11 +40,14 @@ public partial class AccountPageView : UserControl {
         if (!viewModel.IsLogin)
         {
             buttonLogin.Content = "Войти";
-            buttonLogin.Command = viewModel.OpenLoginPageCommand;
+            //buttonLogin.Command = viewModel.OpenLoginPageCommand;
         } 
         else
         {
+            var dialogAccountInfoViewModel = new AccountInfoDialogViewModel();
+
             buttonLogin.Content = viewModel.Username;
+            buttonLogin.Command = viewModel.ShowAccountInfoDialogAsyncCommand;
         }
 
         Grid.SetRow(buttonLogin, 0);

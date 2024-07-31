@@ -16,42 +16,6 @@
 			<Grid RowDefinitions="Auto Auto Auto" ColumnDefinitions="*">
 				<!--Хедер страницы с информацией об аккаунте, или кнопкой Войти-->
 				<Grid Grid.Row="0" Name="HeaderGrid" RowDefinitions="Auto" ColumnDefinitions="*">
-					<Button Content="Добавить токен"
-							Margin="20 10 0 0"
-							Command="{Binding ShowTokenWriteDialogAsyncCommand}"></Button>
-				</Grid>
-
-				<Grid Grid.Row="1" 
-					  Margin="0 50 0 0"
-					  RowDefinitions="Auto Auto" 
-					  ColumnDefinitions="*">
-					<StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-						<TextBlock Text="{Binding CountCreatedPosts}"
-							       FontWeight="SemiBold"
-							       FontSize="50"></TextBlock>
-						<TextBlock Text="{Binding CountMaxPostsString}"
-								   FontSize="20"
-								   VerticalAlignment="Bottom"
-								   Margin="10,0,0,10"/>
-					</StackPanel>
-					<TextBlock Grid.Row="1"
-							   HorizontalAlignment="Center"
-							   FontSize="20">Созданных постов</TextBlock>
-				</Grid>
-
-				<Grid Grid.Row="2"
-					  Margin="0 50 0 0"
-					  RowDefinitions="Auto Auto"
-					  ColumnDefinitions="*">
-					<TextBlock Grid.Row="0"
-							   HorizontalAlignment="Center"
-							   Text="{Binding CountSentPosts}"
-							   FontWeight="SemiBold"
-							   FontSize="50">
-					</TextBlock>
-					<TextBlock Grid.Row="1"
-							   HorizontalAlignment="Center"
-							   FontSize="20">Отправленных постов</TextBlock>
 				</Grid>
 			</Grid>
 		</Border>

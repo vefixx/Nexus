@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Nexus.Helpers;
 using Nexus.ViewModels;
 using Nexus.Views;
 using System.Threading.Tasks;
@@ -34,15 +35,8 @@ namespace Nexus
                 {
                     await Task.Delay(2000);
 
-                    splashViewModel.StartUpMessage = "Trying to connect to the web server..";
-
-                    await Task.Delay(1000);
-
-                    splashViewModel.StartUpMessage = "Trying to connect a Token..";
-
-                    await Task.Delay(1500);
-
-                    splashViewModel.StartUpMessage = "Ready";
+                    splashViewModel.StartUpMessage = "Checking data files..";
+                    JsonFileHelper jsonFileHelper = new JsonFileHelper();
                 }
                 catch(TaskCanceledException)
                 {
